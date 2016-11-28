@@ -46,6 +46,10 @@ var blogArray = [
     title:"Utah",
     text:"Got to Pheonix around 5. Met up with some friends from Gschool I haven't seen for a bit at a brewery down town. We spent most of the time talking about life working for a big bank. It doesn't sound terrible but isn't really my dream either. Turns out Poenix is about what I thought it would be. Hot as balls during the summer and pleasant in the winter and very suburby. The couch I slept on was nice. Before they sold out meh irony humblebrag. Irony church-key cred chicharrones williamsburg yr. Chillwave shoreditch truffaut kale chips asymmetrical tote bag small batch, blue bottle trust fund street art. Lyft try-hard humblebrag scenester. Brooklyn tumblr chia lyft, hammock messenger bag austin banjo locavore ramps. Williamsburg you probably haven't heard of them before they sold out, flexitarian succulents dreamcatcher art party drinking vinegar bitters selvage crucifix tbh helvetica quinoa. Raw denim salvia affogato put a bird on it, fap air plant butcher synth."
   },
+  {location:{lat:36.177560, lng:-121.698901},
+    title:"Big Sur",
+    text:"On Friday I drove up highway 1 to see Big Sur on my way to San Francisco. I made two critical mistakes. One: I went up on the Friday after Thanksgiving and it was packed. I pretty much sat in Traffic for 3 hours. Every pull out had 50 people in it and I honestly couldn't even park at most of the scenic parts \n Two: I had planned on camping in the national forest near by. I had read that there is dispersed camping and its pretty sweet. Well it turns out there was a forest fire in the are over the summer and they just closed the national forest as a result. Because of this I found myself in a very crowded area with nowhere to sleep. Oh well Turns out walmart doesn't care if you spend the night in their parking lot"
+  },
   {location:{lat:37.787611, lng:-122.413868},
     title:"SF",
     text:"made it to SF and it's pretty awesome. I can see why people spend stupid amounts of money to live here"
