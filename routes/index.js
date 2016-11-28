@@ -12,11 +12,51 @@ MongoClient.connect('mongodb://localhost:27017/newDB', (err, database) => {
 })
 
 
-var locationsArray = [{lat:39.7392, lng:-104.9903},{lat:37.846848,lng:-111.025394},{lat:37.777042,lng:-111.620492},{lat:33.4484,lng: -112.0740}]
+var locationsArray = [
+  {lat:39.7392, lng:-104.9903},
+  {lat:37.846848,lng:-111.025394},
+  {lat:37.777042,lng:-111.620492},
+  {lat:33.4484,lng: -112.0740},
+  {lat:32.746152,lng: -117.159537},
+  {lat:34.101509, lng:-118.339386}
+]
+
+var blogArray = [
+  {location:{lat:39.7392, lng:-104.9903},
+    title:"Venice",
+    text:"Got to Pheonix around 5. Met up with some friends from Gschool I haven't seen for a bit at a brewery down town. We spent most of the time talking about life working for a big bank. It doesn't sound terrible but isn't really my dream either. Turns out Poenix is about what I thought it would be. Hot as balls during the summer and pleasant in the winter and very suburby. The couch I slept on was nice. Before they sold out meh irony humblebrag. Irony church-key cred chicharrones williamsburg yr. Chillwave shoreditch truffaut kale chips asymmetrical tote bag small batch, blue bottle trust fund street art. Lyft try-hard humblebrag scenester. Brooklyn tumblr chia lyft, hammock messenger bag austin banjo locavore ramps. Williamsburg you probably haven't heard of them before they sold out, flexitarian succulents dreamcatcher art party drinking vinegar bitters selvage crucifix tbh helvetica quinoa. Raw denim salvia affogato put a bird on it, fap air plant butcher synth."
+  },
+  {location:{lat:37.846848,lng:-111.025394},
+    title:"Phoenix",
+    text:"Got to Pheonix around 5. Met up with some friends from Gschool I haven't seen for a bit at a brewery down town. We spent most of the time talking about life working for a big bank. It doesn't sound terrible but isn't really my dream either. Turns out Poenix is about what I thought it would be. Hot as balls during the summer and pleasant in the winter and very suburby. The couch I slept on was nice. Before they sold out meh irony humblebrag. Irony church-key cred chicharrones williamsburg yr. Chillwave shoreditch truffaut kale chips asymmetrical tote bag small batch, blue bottle trust fund street art. Lyft try-hard humblebrag scenester. Brooklyn tumblr chia lyft, hammock messenger bag austin banjo locavore ramps. Williamsburg you probably haven't heard of them before they sold out, flexitarian succulents dreamcatcher art party drinking vinegar bitters selvage crucifix tbh helvetica quinoa. Raw denim salvia affogato put a bird on it, fap air plant butcher synth."
+  },
+  {location:{lat:37.777042,lng:-111.620492},
+    title:"GJ",
+    text:"Got to Pheonix around 5. Met up with some friends from Gschool I haven't seen for a bit at a brewery down town. We spent most of the time talking about life working for a big bank. It doesn't sound terrible but isn't really my dream either. Turns out Poenix is about what I thought it would be. Hot as balls during the summer and pleasant in the winter and very suburby. The couch I slept on was nice. Before they sold out meh irony humblebrag. Irony church-key cred chicharrones williamsburg yr. Chillwave shoreditch truffaut kale chips asymmetrical tote bag small batch, blue bottle trust fund street art. Lyft try-hard humblebrag scenester. Brooklyn tumblr chia lyft, hammock messenger bag austin banjo locavore ramps. Williamsburg you probably haven't heard of them before they sold out, flexitarian succulents dreamcatcher art party drinking vinegar bitters selvage crucifix tbh helvetica quinoa. Raw denim salvia affogato put a bird on it, fap air plant butcher synth."
+  },
+  {location:{lat:33.4484,lng: -112.0740},
+    title:"Utah",
+    text:"Got to Pheonix around 5. Met up with some friends from Gschool I haven't seen for a bit at a brewery down town. We spent most of the time talking about life working for a big bank. It doesn't sound terrible but isn't really my dream either. Turns out Poenix is about what I thought it would be. Hot as balls during the summer and pleasant in the winter and very suburby. The couch I slept on was nice. Before they sold out meh irony humblebrag. Irony church-key cred chicharrones williamsburg yr. Chillwave shoreditch truffaut kale chips asymmetrical tote bag small batch, blue bottle trust fund street art. Lyft try-hard humblebrag scenester. Brooklyn tumblr chia lyft, hammock messenger bag austin banjo locavore ramps. Williamsburg you probably haven't heard of them before they sold out, flexitarian succulents dreamcatcher art party drinking vinegar bitters selvage crucifix tbh helvetica quinoa. Raw denim salvia affogato put a bird on it, fap air plant butcher synth."
+  },
+  {location:{lat:32.746152,lng: -117.159537},
+    title:"Utah",
+    text:"Got to Pheonix around 5. Met up with some friends from Gschool I haven't seen for a bit at a brewery down town. We spent most of the time talking about life working for a big bank. It doesn't sound terrible but isn't really my dream either. Turns out Poenix is about what I thought it would be. Hot as balls during the summer and pleasant in the winter and very suburby. The couch I slept on was nice. Before they sold out meh irony humblebrag. Irony church-key cred chicharrones williamsburg yr. Chillwave shoreditch truffaut kale chips asymmetrical tote bag small batch, blue bottle trust fund street art. Lyft try-hard humblebrag scenester. Brooklyn tumblr chia lyft, hammock messenger bag austin banjo locavore ramps. Williamsburg you probably haven't heard of them before they sold out, flexitarian succulents dreamcatcher art party drinking vinegar bitters selvage crucifix tbh helvetica quinoa. Raw denim salvia affogato put a bird on it, fap air plant butcher synth."
+  },
+  {location:{lat:34.101509, lng:-118.339386},
+    title:"Utah",
+    text:"Got to Pheonix around 5. Met up with some friends from Gschool I haven't seen for a bit at a brewery down town. We spent most of the time talking about life working for a big bank. It doesn't sound terrible but isn't really my dream either. Turns out Poenix is about what I thought it would be. Hot as balls during the summer and pleasant in the winter and very suburby. The couch I slept on was nice. Before they sold out meh irony humblebrag. Irony church-key cred chicharrones williamsburg yr. Chillwave shoreditch truffaut kale chips asymmetrical tote bag small batch, blue bottle trust fund street art. Lyft try-hard humblebrag scenester. Brooklyn tumblr chia lyft, hammock messenger bag austin banjo locavore ramps. Williamsburg you probably haven't heard of them before they sold out, flexitarian succulents dreamcatcher art party drinking vinegar bitters selvage crucifix tbh helvetica quinoa. Raw denim salvia affogato put a bird on it, fap air plant butcher synth."
+  }
+]
+
+
 
 router.get('/', function(req, res, next) {
   console.log(db);
-  res.send(locationsArray)
+  res.send(blogArray)
+});
+
+router.get('/blogs', function(req, res, next) {
+  res.send(blogArray)
 });
 
 router.post('/locations', function(req, res){
