@@ -1,12 +1,12 @@
-module.exports = {
 
+module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/pokemon-node'
+    connection: 'postgres://localhost/code-road-trip'
   },
 
   production: {
-    client: 'postgresql',
-    connection: ''
+    client: 'pg',
+    connection:
   }
 };

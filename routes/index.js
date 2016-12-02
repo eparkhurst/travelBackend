@@ -1,15 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var bodyParser = require('body-parser')
-const MongoClient = require('mongodb').MongoClient
+var bodyParser = require('body-parser');
+var knex = require('../db/knex');
 
 /* GET home page. */
-var db
-//
-MongoClient.connect('mongodb://localhost:27017/newDB', (err, database) => {
- if (err) return console.log(err)
-   db = database
-})
+
 
 
 var locationsArray = [
@@ -81,12 +76,36 @@ var blogArray = [
 
 
 router.get('/', function(req, res, next) {
-  console.log(db);
   res.send(blogArray)
 });
 
 router.get('/blogs', function(req, res, next) {
-  res.send(blogArray)
+  knex('locations')
+  .leftJoin('blogs','locations.id','=','blogs.location_id')
+  .then(function(data){
+    // var adata = JSON.parse(data)
+    var toSend = data.map((e)=>{
+      e.location = {
+        lat:e.lat,
+        lng:e.lng
+      }
+      delete e.lat
+      delete e.lng
+      return e
+    })
+    res.send(toSend)
+  })
+
+//   knex('users')
+// .join('contacts', 'users.id', '=', 'contacts.user_id')
+  // res.send(blogArray)
+});
+
+router.get('/users', function(req,res,next){
+  knex.select().from('users').then(function(data){
+    console.log(data);
+    res.send(data)
+  })
 });
 
 router.post('/locations', function(req, res){
