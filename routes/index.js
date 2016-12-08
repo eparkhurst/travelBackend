@@ -80,6 +80,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/blogs', function(req, res, next) {
+  console.log("hit");
   knex('locations')
   .leftJoin('blogs','locations.id','=','blogs.location_id')
   .then(function(data){
@@ -97,9 +98,6 @@ router.get('/blogs', function(req, res, next) {
     res.send(toSend)
   })
 
-//   knex('users')
-// .join('contacts', 'users.id', '=', 'contacts.user_id')
-  // res.send(blogArray)
 });
 
 router.get('/users', function(req,res,next){
