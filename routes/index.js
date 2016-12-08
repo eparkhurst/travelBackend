@@ -83,6 +83,7 @@ router.get('/blogs', function(req, res, next) {
   knex('locations')
   .leftJoin('blogs','locations.id','=','blogs.location_id')
   .then(function(data){
+    console.log("FROM DB: ", data);
     // var adata = JSON.parse(data)
     var toSend = data.map((e)=>{
       e.location = {
