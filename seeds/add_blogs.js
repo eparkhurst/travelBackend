@@ -79,7 +79,7 @@ exports.seed = function(knex, Promise) {
         knex('blogs').insert({
           id:12,
           title:"SF",
-          text:"made it to SF and it's pretty awesome. I can see why people spend stupid amounts of money to live here",
+          text:"I made it to SF on a Saturday and wandered around the city. I can see why people spend absurd amounts of money to live here. It's pretty awesome",
           location_id:8
         }),
       ]);
