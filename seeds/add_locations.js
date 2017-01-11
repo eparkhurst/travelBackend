@@ -29,6 +29,12 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       return knex('locations').insert({order:9,lat:37.787611, lng:-122.413868})
     })
+    .then(function () {
+      return knex('locations').insert({order:10,lat:41.2132, lng:-124.0046})
+    })
+    .then(function () {
+      return knex('locations').insert({order:11,lat:45.5231, lng:-122.6765})
+    })
 };
 
 

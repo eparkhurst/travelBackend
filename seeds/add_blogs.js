@@ -92,5 +92,19 @@ exports.seed = function(knex, Promise) {
           location_id:9
         })
       })
+      .then(function(){
+        return knex('blogs').insert({
+          title:"RedWoods",
+          text:"After my interview in San Fransisco I headed north to RedWoods National Park. I was still excited about possibly getting the job in SF so the ride went well. I stopped for gas in Eureka and looked at my email. I didn't get the job. \n  I was pretty bummed out for the rest of the drive. I ended up getting into Redwood national park about 5 mins before the ranger station closed and picked out a camping spot right on the ocean. I had stopped and gotten some firewood on the way in but it was wet and I couldn't start a fire. After about an hour of trying it turned into a metaphor for the trip. No matter how hard I try, it just won't light. ",
+          location_id:10
+        })
+      })
+      .then(function(){
+        return knex('blogs').insert({
+          title:"Portland",
+          text:"Before the trip Portland was one of the places I was considering living in. I no longer feel that way. \n Portland sucked. For a long list of reasons Portland and I just didn't get along. Everyone I ran into seemed overly pretentious and libral. The kind of libral that truely beleives that the way I live my life, is killing whales. I also had more converations about conspiracy theories that I've had in the last 5 years combined and the weather was about 37 F and pouring rain. Finally my car was broken into. \nThe last thing I did in Portland was tape cardboard into my broken window and drive away. I will never live in Portland",
+          location_id:11
+        })
+      })
 
 };
