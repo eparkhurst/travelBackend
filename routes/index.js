@@ -8,6 +8,7 @@ var queries = require('../lib/dbQueries')
 
 
 router.get('/blogs', function(req, res, next) {
+  console.log("ROUTE HIT");
   // knex('locations')
   // .leftJoin('blogs','locations.id','=','blogs.location_id')
   queries.getBlogs()
