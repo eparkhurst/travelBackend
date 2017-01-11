@@ -34,14 +34,7 @@ router.get('/users', function(req,res,next){
 });
 
 router.post('/locations', function(req, res){
-  var obj = {}
-  obj.location={}
-  obj.location.lat = Number(req.body.lat)
-  obj.location.lng = Number(req.body.lng)
-  obj.title = req.body.title
-  obj.text = req.body.text
-  console.log(obj);
-  queries.addBlog(obj)
+  queries.addBlog(req.body)
     .then(function(results){
       res.send(results)
       return results;
