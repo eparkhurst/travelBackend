@@ -11,19 +11,21 @@ router.get('/blogs', function(req, res, next) {
   console.log("ROUTE HIT");
   // knex('locations')
   // .leftJoin('blogs','locations.id','=','blogs.location_id')
-  queries.getBlogs()
-  .then(function(data){
-    var toSend = data.map((e)=>{
-      e.location = {
-        lat:e.lat,
-        lng:e.lng
-      }
-      delete e.lat
-      delete e.lng
-      return e
-    })
-    res.send(toSend)
-  })
+  res.send("something worked?")
+
+  // queries.getBlogs()
+  // .then(function(data){
+  //   var toSend = data.map((e)=>{
+  //     e.location = {
+  //       lat:e.lat,
+  //       lng:e.lng
+  //     }
+  //     delete e.lat
+  //     delete e.lng
+  //     return e
+  //   })
+  //   res.send(toSend)
+  // })
 
 });
 
